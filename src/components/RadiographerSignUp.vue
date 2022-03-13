@@ -1,35 +1,35 @@
 <template>
   <form>
       <h2>Register as radiographer</h2>
-      <label>Name:</label>
-      <input type="text" name="name" id="name"  v-model="name">
+      <label>Name: *</label>
+      <input type="text" name="name" id="name"  v-model="name" required>
 
-      <label>Email:</label>
-      <input type="email" name="email" id="email"  v-model="email">
+      <label>Email: *</label>
+      <input type="email" name="email" id="email"  v-model="email" required>
 
-      <label>Password:</label>
-      <input type="password" name="password" id="password"  v-model="password">
+      <label>Password: *</label>
+      <input type="password" name="password" id="password"  v-model="password" required>
       <div v-if="passwordError" class="error"> {{ passwordError }} </div>
 
-      <label>Home Address:</label>
-      <input type="text" name="homeAddress" id="homeAddress"  v-model="homeAddress">
+      <label>Home Address: *</label>
+      <input type="text" name="homeAddress" id="homeAddress"  v-model="homeAddress" required>
 
       <label>Work Address:</label>
       <input type="text" name="workAddress" id="workAddress"  v-model="workAddress">
 
-      <label>Phone Number:</label>
-      <input type="number" name="phoneNumber" id="phoneNumber"  v-model="phoneNumber">
+      <label>Phone Number: *</label>
+      <input type="number" name="phoneNumber" id="phoneNumber"  v-model="phoneNumber" required>
 
       <!-- Input of countries API goes here -->
       <!-- Can select multiple -->
-      <label for="">Where can you work?</label>
-      <select name="countries" id="countries" v-model="countries">
+      <label for="">Where can you work? *</label>
+      <select name="countries" id="countries" v-model="countries" required>
           <!-- <option value="Web Developer">Web Developer</option>
           <option value="Web Designer">Web Designer</option> -->
       </select>
 
-      <label for="">Job Type:</label>
-      <select name="jobType" id="jobType" v-model="jobType">
+      <label for="">Job Type: *</label>
+      <select name="jobType" id="jobType" v-model="jobType" required>
           <option value="Full Time">Full Time</option>
           <option value="Part Time">Part Time</option>
       </select>
@@ -37,14 +37,14 @@
       <label>Expected Salary:</label>
       <input type="number" name="expectedSalary" id="expectedSalary"  v-model="expectedSalary">
 
-      <label>License:</label>
-      <input type="text" name="license" id="license"  v-model="license">
+      <label>License: *</label>
+      <input type="text" name="license" id="license"  v-model="license" required>
 
-      <label>Degree:</label>
-      <input type="text" name="degree" id="degree"  v-model="degree">
+      <label>Degree: *</label>
+      <input type="text" name="degree" id="degree"  v-model="degree" required>
 
-      <label for="">Qualifications:</label>
-      <input type="text" name="qualifications" id="qualifications" v-model="tempSkill" @keyup="addSkill" placeholder="Enter your qualifications comma separated..">
+      <label for="">Qualifications: *</label>
+      <input type="text" name="qualifications" id="qualifications" v-model="tempSkill" @keyup="addSkill" placeholder="Enter your qualifications comma separated.." required>
         <!-- for v-for to work you must add a key -->
       <div class="pill" v-for="skill in qualifications" :key="skill">
           <p @click="removeSkill(skill)">{{ skill }}</p>
@@ -52,8 +52,8 @@
 
       <br>
 
-      <label for="">Modalities:</label>
-      <select name="modalities" id="modalities" v-model="modalities">
+      <label for="">Modalities: *</label>
+      <select name="modalities" id="modalities" v-model="modalities" required>
           <option value="plain x-rays">Plain x-rays</option>
           <option value="fluoroscopy">Fluoroscopy</option>
           <option value="nuclear medicine">Nuclear medicine</option>
